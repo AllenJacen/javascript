@@ -5,8 +5,8 @@
     <title></title>
     <style>
         *{
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
         }
         li{
             list-style: none;
@@ -54,6 +54,10 @@
         #content div{
             display: none;
         }
+        #content div img{
+            width: 400px;
+            height: 368px;
+        }
     </style>
 </head>
 <body>
@@ -64,9 +68,9 @@
         <li>javascript</li>
     </ul>
     <div id="content">
-        <div class="selected">123</div>
-        <div>456</div>
-        <div>789</div>
+        <div class="selected"><img src="img/1.jpg"> </div>
+        <div><img src="img/2.jpg"> </div>
+        <div><img src="img/3.jpg"> </div>
     </div>
     <script>
         var oNav=document.getElementById("nav");
