@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            border: 0px;
+        }
+     #container{
+         width: 520px;
+         height:280px;
+         position: relative;
+         margin:200px auto;
+     }
+        #imgs img{
+            display: none;
+        }
+        #imgs .selected{
+            display: block;
+        }
+        #nav{
+            position: absolute;
+            bottom: 10px;
+            right: 5px;
+        }
+        #nav li,#arrows div{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right:5px;
+        }
+        #arrows{
+            position: absolute;
+            left: 5px;
+            bottom: 10px;
+        }
+        #nav .selected{
+            background: orange;
+            /*color: #000000;*/
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/1.jpg" alt="" class="selected">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+    <ul id="nav">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <div id="left">&lt;</div>
+        <div id="right">&gt;</div>
+    </div>
+</div>
+    <script>
+        var oNav=document.getElementById("nav");
+        var aLi=oNav.getElementsByTagName("li");
+        var oImgs=document.getElementById("imgs");
+        var aImg=oImgs.getElementsByTagName("img");
+        var oLeft=document.getElementById("left");
+        var oRight=document.getElementById("right");
+        var nowindex=0;//保存当前的index
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onmousemove=function(){
+                nowindex=this.index;
+                changgeImg();
+            };
+        }
+       oLeft.onclick=oRight.onclick=function(){
+            if(this==oLeft){
+            nowindex--;
+                if(nowindex==-1){
+                    nowindex=aLi.length-1;
+                }
+            }else{
+               nowindex++;
+               if(nowindex==aLi.length){
+                   nowindex=0;
+               }//判断是否越界
+           }
+           changgeImg();
+        };
+        function changgeImg(){
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className="";
+                aImg[i].className="";
+            }
+            aLi[nowindex].className="selected";
+            aImg[nowindex].className="selected";
+        }
+    </script>
+</div>
+</body>
+</html>
