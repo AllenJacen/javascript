@@ -109,11 +109,11 @@
         oContainer.onmouseout=function(){
           play();
        /*timer=setInterval(function(){
-                oRight.onclick();//不加var时就是全局变量；
+                oRight.onclick();//如果timer在整个程序中未声明，，不加var时就是全局变量；在外面声明了timer，所以这里的timer就会追溯到外层的timer
             },1000);*/
         };
-       /* timer=setInterval(function(){
-            oRight.onclick();},1000);//不加var时就是全局变量；*/
+       /*var timer=setInterval(function(){
+            oRight.onclick();},1000);*/
        play();
             function play(){
                 timer=setInterval(function(){
