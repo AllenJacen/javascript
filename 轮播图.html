@@ -79,7 +79,9 @@
         var aImg=oImgs.getElementsByTagName("img");
         var oLeft=document.getElementById("left");
         var oRight=document.getElementById("right");
+        var oContainer=document.getElementById("container");
         var nowindex=0;//保存当前的index
+        var timer;
         for(var i=0;i<aLi.length;i++){
             aLi[i].index=i;
             aLi[i].onmousemove=function(){
@@ -101,6 +103,24 @@
            }
            changgeImg();
         };
+        oContainer.onmouseover=function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout=function(){
+          play();
+       /*timer=setInterval(function(){
+                oRight.onclick();//不加var时就是全局变量；
+            },1000);*/
+        };
+       /* timer=setInterval(function(){
+            oRight.onclick();},1000);//不加var时就是全局变量；*/
+       play();
+            function play(){
+                timer=setInterval(function(){
+                    oRight.onclick();
+                },1000);
+            };
+
         function changgeImg(){
             for(var i=0;i<aLi.length;i++){
                 aLi[i].className="";
