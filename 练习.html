@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+     var  nowYear= window.prompt("输入信息：","请输入年份");
+
+      judge(nowYear);
+     /*var now=new Date();
+     var result= judge(now.getFullYear());
+     console.log(result);*/
+
+     function judge(year){
+         if(year%4==0&&year%100!=0||year%400==0){
+             alert("该年是闰年！")
+         }
+         else{
+             alert("该年不是闰年");
+         }
+     };
+</script>
+
+</body>
+</html>

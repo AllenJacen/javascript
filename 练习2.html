@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var age=window.prompt("请输入你的年龄：");
+    ageGroup(age);
+
+   function ageGroup(){
+       if(age<14){
+           alert("儿童阶段");
+       }
+       else if(age>=14&&age<24){
+           alert("青少年阶段");
+       }
+       else if(age>=24&&age<32){
+           alert("青年阶段");
+       }
+       else if(age>=32&&age<60){
+           alert("中年阶段");
+       }
+       else{
+           alert("老年阶段");
+       }
+   }
+
+
+</script>
+</body>
+</html>
