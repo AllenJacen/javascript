@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+/*
+ var x=Math.random();
+ var y=Math.random();
+ //    x>y?alert(x):alert(y);
+ console.log(x);
+ console.log(y);
+ console.log(  Math.max(x,y)  );
+ console.log(  Math.min(x,y)  );
+ */
+//var week=window.prompt("请输入0~6的数字");
+//prompt()方法用于显示可提示用户进行输入的对话框。
+//这个方法返回用户输入的字符串。
+//    week=Number(week);
+/*alert(week<2);
+console.info(typeof week);*/
+//    isWeek(week);
+
+/*var nu=window.prompt("请输入要计算阶乘的数");
+console.log(  nu+"的阶乘为"+factorial(nu)  );*/
+
+
+/*var first=window.prompt("first");
+var finily=window.prompt("finily");
+console.log(  accumulation(first,finily)  );*/
+
+//digitalPattern();
+
+
+
+//starPattern();
+
+
+function A(){
+    for(var i=100;i<=999;i++){
+        if(i%4==2&&i%7==3&&i%9==5)
+        {document.write(i);
+         document.write("<br>");
+        }
+    }
+}
+
+A();
+
+
+//星星三角形图案函数
+function starPattern(){
+    var i,line;
+    for(line=1;line<=5;line++)
+    {
+        document.write(" ");
+        for(i=1;i<=5-line;i++)
+        {document.write("&nbsp;");};
+        for(i=1;i<=line;i++)
+        {
+            document.write("*");
+            if (i>0) document.write(" ");
+        }
+        document.write("<br>");
+    }
+}
+
+
+//数字图案函数
+function digitalPattern(){
+    var i,line;
+    for(line=1;line<=5;line++)
+    {
+        document.write("&nbsp;&nbsp;");
+        for(i=1;i<=line;i++)
+        {
+            document.write(i);
+            if (i>0) document.write(" ");
+        }
+        document.write("<br>");
+    }
+}
+//阶乘的迭代相加函数
+function accumulation(a,max){
+    var max,num=factorial(a);
+    for(var i= 1;i<=max;i++){
+        num=num+factorial(i+1);
+     }
+  return  num;
+}
+//阶乘函数
+function factorial(a){
+    var fa;
+    if(a==0||a==1)
+    {
+        fa=1;
+    }
+    else{
+        fa=a*factorial(a-1);//递归
+    }
+    return fa;
+}
+//星期函数
+function isWeek(){
+    switch(week)
+    {
+        case 0:
+            alert("星期日");break;
+        case 1:alert("星期一");break;
+        case 2:alert("星期二");break;
+        case 3:alert("星期三");break;
+        case 4:alert("星期四");break;
+        case 5:alert("星期五");break;
+        case 6:alert("星期六");break;
+        default:alert("你输入的数值不对！");
+    }
+}
+</script>
+</body>
+</html>
