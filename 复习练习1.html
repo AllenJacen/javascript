@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    #a{
+    width: 500px;
+    height: 500px;
+    background: white;
+        border: dashed black 2px;
+        /*position: relative;*/
+
+    }
+    #b{
+            width: 100px;
+            height: 100px;
+        background: red;
+        position: relative;
+        }
+    </style>
+</head>
+<body>
+   <div id="a">
+       <div id="b">
+
+       </div>
+   </div>
+   <script>
+       var father=document.getElementById("a");
+       var son=document.getElementById('b');
+       console.log(son.offsetParent);
+       console.log(father.id);
+       console.log(son.id);
+       son.onmousedown=function(e){
+            disX= e.clientX-son.offsetLeft;
+            disY= e.clientY-son.offsetTop;
+          document.onmousemove=function(e){
+//           father.onmousemove=function(e){
+                e=e||window.event;
+                son.style.left= e.clientX-disX+'px';
+                son.style.top= e.clientY-disY+'px';
+                judege();
+           };
+
+       };
+     son.onmouseup=function(e){
+         document.onmousemove=null;
+//         father.onmousemove=null;
+     }
+
+ function judege(){
+     if(son.offsetLeft>=400){
+         son.style.left=400+'px';
+
+     };
+     if(son.offsetTop>=400){
+         son.style.top=400+'px';
+     };
+     if(son.offsetLeft<=2){
+         son.style.left=2+'px';
+     };
+     if(son.offsetTop<=2){
+         son.style.top=2+'px';
+     };
+ };
+
+   </script>
+</body>
+</html>

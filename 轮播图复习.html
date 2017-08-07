@@ -105,11 +105,13 @@
             if(Nowindex<0){
                 Nowindex=aLi.length-1;
             }
+//            Nowindex%=aLi.length;
         }else{
             Nowindex++;
-            if(Nowindex==aLi.length){
+            /*if(Nowindex==aLi.length){
                 Nowindex=0;
-            }
+            }*/
+            Nowindex%=aLi.length;
         }
          changeImg();
 };
@@ -133,6 +135,7 @@ function changeImg(){
     aLi[Nowindex].className="selected";
     aImg[Nowindex].className="selected";
 }
+
 </script>
 </body>
 </html>

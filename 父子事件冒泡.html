@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+#div1{
+    width: 500px;
+    height: 500px;
+    background: red;
+}
+#div2{
+    width: 200px;
+    height: 200px;
+    background: green;
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">我是父亲，点我变紫色
+    <div id="div2">我是儿子，点我变黑色</div>
+</div>
+<script>
+var a=document.getElementById('div1');
+var b=document.getElementById("div2");
+a.onclick=function(){
+    a.style.backgroundColor="#ff00ff";
+}
+b.onclick=function(){
+    b.style.backgroundColor="#000000";
+}
+
+</script>
+</body>
+</html>

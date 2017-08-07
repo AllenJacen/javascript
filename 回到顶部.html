@@ -44,12 +44,15 @@ gs<br>csgs<br>vcsgs<br>vvcsgs<br>csgs<br>
       var timer=setInterval(
               function(){
                   window.scrollBy(0,-100);
-
+                  if(scrollTop<=0)
+                  {
+                      clearInterval(timer);
+                  }
               },30);
-        if(scrollTop<=0)
+        /*if(scrollTop<=0)
            {
              clearInterval(timer);
-           }
+           }*/
     };
 
 
