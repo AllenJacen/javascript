@@ -98,7 +98,17 @@ function first(elem){
     return elem.nodeType==1?elem:next(elem);
 }
 
-
+//写括号是函数调用
+//handler： 事件的处理函数
+function addEvent(elem,type,handler){
+    if(elem.addEventListener){
+        elem.addEventListener(type,handler);
+    }else if(elem.attachEvent){
+        elem.attachEvent("on"+type,handler);
+    }else{
+        elem["on"+type]=handler;
+    }
+        };
 
 
 

@@ -41,6 +41,9 @@
                 son.style.left= e.clientX-disX+'px';
                 son.style.top= e.clientY-disY+'px';
                 judege();
+              if(e.clientX>=500||e.clientY>=500){
+                  document.onmousemove=null;
+              };
            };
 
        };

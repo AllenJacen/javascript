@@ -72,6 +72,86 @@
 </div>
 </div>
 <script>
+   var oImg=document.getElementById('imgs');
+   var aImg=oImg.getElementsByTagName('img');
+   var oUl=document.getElementById("nav");
+   var aLi=oUl.getElementsByTagName("li");
+
+   for(var i=0;i<aLi.length;i++){
+       aLi[i].index=i;
+       aLi[i].onmousemove= function () {
+           for(var i=0;i<aLi.length;i++){
+               aLi[i].className='';
+               aImg[i].className='';
+           }
+           this.className='selected';
+           aImg[this.index].className='selected';
+       };
+   }//循环的目的是给每一个aLi绑定一个划过事件。\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     var oImgs=document.getElementById("imgs");
     var aImg=oImgs.getElementsByTagName("img");
     var oNav=document.getElementById("nav");
@@ -81,7 +161,7 @@
     var Nowindex=0;
     var oContainer=document.getElementById("container");
     var Timer;
- /*   for(var i;i<aLi.length;i++){
+ /!*   for(var i;i<aLi.length;i++){
         aLi[i].index=i;
         aLi[i].onmousemove=function(){
             for(var i;i<aLi.length;i++){   //由于没有给循环里的i赋初值导致达不到预期的效果
@@ -91,7 +171,7 @@
             this.className="selected";
             aImg[this.index].className="selected";
         };
-    }*/
+    }*!/
     for(var i=0;i<aLi.length;i++){
         aLi[i].index=i;
         aLi[i].onmousemove=function(){
@@ -108,9 +188,9 @@
 //            Nowindex%=aLi.length;
         }else{
             Nowindex++;
-            /*if(Nowindex==aLi.length){
+            /!*if(Nowindex==aLi.length){
                 Nowindex=0;
-            }*/
+            }*!/
             Nowindex%=aLi.length;
         }
          changeImg();
@@ -135,6 +215,7 @@ function changeImg(){
     aLi[Nowindex].className="selected";
     aImg[Nowindex].className="selected";
 }
+*/
 
 </script>
 </body>

@@ -24,12 +24,22 @@
 <script>
 var a=document.getElementById('div1');
 var b=document.getElementById("div2");
-a.onclick=function(){
+  a.onclick=function(){
     a.style.backgroundColor="#ff00ff";
+      event.stopPropagation();
 }
 b.onclick=function(){
     b.style.backgroundColor="#000000";
+    event.stopPropagation();
 }
+/*a.addEventListener('click',function(){
+    a.style.backgroundColor="#ff00ff";
+    alert(1);
+},false);
+b.addEventListener('click',function(){
+    b.style.backgroundColor="#000000";
+    alert(2);
+},false);*/
 
 </script>
 </body>
