@@ -12,7 +12,10 @@
 <body>
 <a href="http://www.baidu.com" id="baidu">e e r</a>
 <script>
-var oA=document.gete("a");
+var oA=document.getElementsByTagName("a")[0];
+var oB=document.getElementsByTagName("a")[1];
+console.log(oA);
+console.log(oB);
 //var oA=document.getElementById("baidu");
 console.log(oA);
 oA.onclick=function(){
